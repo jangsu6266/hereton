@@ -1,0 +1,6 @@
+<h3>댓글달기</h3>
+<form method="POST" class="post-form">
+    {%csrf_token%}
+    {{form.as_p}}
+    <input type="submit" value="올리기">
+</form>

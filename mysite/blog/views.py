@@ -2,6 +2,7 @@ from django.shortcuts import render, get_object_or_404,redirect
 from .models import Blog,Comment
 from django.utils import timezone
 from django.views.decorators.csrf import csrf_exempt
+from .form import CommentForm
 
 # Create your views here.
 def list(request):
@@ -46,3 +47,18 @@ def update(request, blog_id) :
     blog.pub_date = timezone.datetime.now()
     blog.save()
     return redirect('home')
+
+
+#댓글
+def add_comment_to_post(request, blog_id):
+    blog = get_object_or_404(Blog, pk=blog_id)
+    if request.method == "POST":
+        form = CommentForm(request.POST)
+        if form.is_valid():
+            comment = form.save(commit=False)
+            comment.post = blog
+            comment.save()
+            return redirect('http://127.0.0.1:8000/blog/'+str(blog_id))
+    else:
+        form = CommentForm()
+        return render(request, 'comment.html', {'form':form})
