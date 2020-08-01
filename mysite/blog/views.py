@@ -1,4 +1,5 @@
 from django.shortcuts import render, get_object_or_404,redirect
+from django.contrib.auth.decorators import login_required ##
 from .models import Blog,Comment
 from django.utils import timezone
 from django.views.decorators.csrf import csrf_exempt
@@ -25,7 +26,7 @@ def new(request) :
 
     return redirect('/blog/' +str(blog.id))
 
-def delete(request):
+def delete(request, blog_id):
     blogs = Blog.objects.get(pk= blog_id)
     blogs.delete()
     return redirect('subject')
@@ -50,6 +51,7 @@ def update(request, blog_id) :
 
 
 #댓글
+@login_required
 def add_comment_to_post(request, blog_id):
     blog = get_object_or_404(Blog, pk=blog_id)
     if request.method == "POST":
