@@ -2,12 +2,6 @@
 {% block content %}
 {% load static %}
 
-    <!-- 네이게이션 바 SUBJECT이랑 글쓰기 -->
-    <div class="navbar">
-        
-        <a class="nav-item nav-link" href="{% url 'create' %}" style='text-decoration: none;'>글쓰기</a>
-    </div>
-
     <h1>SUBJECT</h1>
 
     <!-- 블로그 글 불러오기 -->
@@ -22,7 +16,7 @@
         </div>
     {% endfor %}
 
-{% endblock %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -136,3 +130,5 @@
 
 </body>
 </html>
+
+{% endblock %}
