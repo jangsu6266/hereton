@@ -35,7 +35,7 @@ def edit(request, blog_id):
 
 def home(request):
     comment=Comment.objects
-    return render(request, 'home.html',{'comment':comment})
+    return render(request, 'home.html')
 
 
 @csrf_exempt
