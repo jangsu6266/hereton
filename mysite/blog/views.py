@@ -5,9 +5,9 @@ from django.views.decorators.csrf import csrf_exempt
 from .form import CommentForm
 
 # Create your views here.
-def list(request):
+def subject(request):
     blogs=Blog.objects
-    return render(request,'list.html',{'blogs':blogs})
+    return render(request,'subject.html',{'blogs':blogs})
 
 def detail(request,blog_id) :
     blog_object = get_object_or_404(Blog, pk=blog_id)
@@ -28,7 +28,7 @@ def new(request) :
 def delete(request):
     blogs = Blog.objects.get(pk= blog_id)
     blogs.delete()
-    return redirect('list')
+    return redirect('subject')
 
 def edit(request, blog_id):
     blog_edit = Blog.objects.get(pk=blog_id)
