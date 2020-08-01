@@ -22,14 +22,15 @@ import accounts.views
 urlpatterns = [
     path('admin/', admin.site.urls),
 
-    path('',blog.views.subject, name = "subject"),
+    path('',accounts.views.signin, name = "signin"),
     path('blog/<int:blog_id>',blog.views.detail, name= "detail"),
     path('blog/create/', blog.views.create, name="create"),
     path('blog/new/',blog.views.new,name="new"),
     path('blog/delete/<int:blog_id>',blog.views.delete, name="delete"),
     path('blog/edit/<int:blog_id>', blog.views.edit, name="edit"),
     path('blog/update/<int:blog_id>', blog.views.update, name="update"),
-    path('accounts/', include('accounts.urls')),
     path('home/', blog.views.home, name="home"),
+    path('accounts/', include('accounts.urls')),
+
     path('blog/<int:blog_id>/comment', blog.views.add_comment_to_post, name='comment'),
 ]

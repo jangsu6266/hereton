@@ -12,7 +12,7 @@ def signup(request):
         if request.POST['password'] == request.POST['password2']:
             user = User.objects.create_user(username=request.POST['username'], password=request.POST['password'])
             auth.login(request, user)
-            return redirect('home') #회원가입 버튼 눌렀을 때, home.html로 이동 
+            return redirect('signin') #회원가입 버튼 눌렀을 때, home.html로 이동 
     return render(request, 'accounts/signup.html')
 
 
