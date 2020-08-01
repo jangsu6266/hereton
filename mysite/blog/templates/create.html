@@ -1,13 +1,17 @@
 <div class="container">
     <form action="{% url 'new' %}">
+        {%csrf_token%}
         <h4>제목:</h4>
         <input type="text" name="title">
         <br>
+        <h4>교수님:</h4>
+        <input type="text" name="professor">
         <br>
         <h4>본문:</h4>
         <textarea cols=40 rows=10 name="body"></textarea>
         <br>
-        <br>
+        해시태그: <input type="text" name="hashtags" placeholder="해시태그(,로 구분)">
+                <br>
         <input class="btn btn-dark" type="submit" value="완료">
     </form>
 </div>

@@ -2,10 +2,17 @@ from django.db import models
 from django.utils import timezone
 
 # Create your models here.
-class  Blog(models.Model):
+class Hashtag(models.Model):
+    name = models.CharField(max_length=200)
+
+    def __str__(self):
+        return self.name
+
+class  Subject(models.Model):
     title = models.CharField(max_length=200)
-    pub_date = models.DateTimeField('date published')
+    professor=models.CharField(max_length=20)
     body = models.TextField()
+    hashtag=models.ManyToManyField(Hashtag)
 
     def __str__(self) :
         return self.title
@@ -15,7 +22,7 @@ class  Blog(models.Model):
 
 
 class Comment(models.Model):
-    post = models.ForeignKey(Blog, related_name='comments', on_delete=models.CASCADE)
+    post = models.ForeignKey(Subject, related_name='comments', on_delete=models.CASCADE)
     author_name = models.CharField(max_length=20)
     comment_text = models.TextField()
     created_at = models.DateTimeField(default = timezone.now)
