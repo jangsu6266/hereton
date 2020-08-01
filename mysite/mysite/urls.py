@@ -22,7 +22,7 @@ import accounts.views
 urlpatterns = [
     path('admin/', admin.site.urls),
 
-    path('',blog.views.list, name = "list"),
+    path('',blog.views.subject, name = "subject"),
     path('blog/<int:blog_id>',blog.views.detail, name= "detail"),
     path('blog/create/', blog.views.create, name="create"),
     path('blog/new/',blog.views.new,name="new"),
