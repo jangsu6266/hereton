@@ -1,0 +1,10 @@
+<h1>SUBJECT</h1>
+
+<!-- 블로그 글 불러오기 -->
+{% for blog in blogs.all %}
+    <div class="container">
+        <h1>{{ blog.title }}</h1>
+        <p>{{ blog.pub_date }}</p>
+        <p>{{ blog.body }}</p>
+    </div>
+{% endfor %}
