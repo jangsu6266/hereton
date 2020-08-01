@@ -1,3 +1,9 @@
+<!-- 네이게이션 바 SUBJECT이랑 글쓰기 -->
+<div class="navbar">
+    <!-- <a class="nav-item nav-link" href="{%url 'subject' %}">SUBJECT</a>" -->
+    <a class="nav-item nav-link" href="{% url 'create' %}" style='text-decoration: none;'>글쓰기</a>
+</div>
+
 <h1>SUBJECT</h1>
 
 <!-- 블로그 글 불러오기 -->
@@ -5,6 +11,9 @@
     <div class="container">
         <h1>{{ blog.title }}</h1>
         <p>{{ blog.pub_date }}</p>
-        <p>{{ blog.body }}</p>
+        <!-- <p>{{ blog.body }}</p> -->
+        <p>{{ blog.summary }}<a href="{%url 'detail' blog.id%}" style='text-decoration: none;'>더보기</a></p>
+        <p><a href="{% url 'delete' blog.id %}" style='text-decoration: none;'>삭제</a></p>
+        <p><a href="{% url 'edit' blog.id %}">수정</a></p>
     </div>
 {% endfor %}
