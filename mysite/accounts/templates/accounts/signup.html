@@ -1,0 +1,35 @@
+{% block content %}
+
+<div class = "container">
+    <h1>회원가입</h1>
+        <form method="POST" action="{%url 'signup' %}">
+            {% csrf_token %}
+            <br>
+            Username:
+            <input name="username" type="text" value="">
+            <br>
+            Password:
+            <input name="password" type="password" value="">
+            <br>
+            Confirm password:
+            <input name="password2" type="password" value="">
+            <br>
+            School: 
+            <select>
+                <optgroup label = "여자대학교">
+                    <option>=============</option>
+                    <option>동덕여자대학교</option>
+                    <option>덕성여자대학교</option>
+                    <option>서울여자대학교</option>
+                    <option>성신여자대학교</option>
+                    <option>이화여자대학교</option>
+                </optgroup>
+            </select>
+            <br>
+            <br>
+            <input class = "btn btn-primary" type="submit" value="회원가입">
+        </form>
+</div>
+{% endblock %}
+
+
