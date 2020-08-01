@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404,redirect
-from .models import Blog
+from .models import Blog,Comment
 from django.utils import timezone
 from django.views.decorators.csrf import csrf_exempt
 
@@ -10,7 +10,7 @@ def list(request):
 
 def detail(request,blog_id) :
     blog_object = get_object_or_404(Blog, pk=blog_id)
-    return render(request, 'detail.html', {'blog' : blog_detail})
+    return render(request, 'detail.html', {'blog' : blog_object})
 
 def create(request) :
     return render(request, 'create.html')
@@ -32,6 +32,10 @@ def delete(request):
 def edit(request, blog_id):
     blog_edit = Blog.objects.get(pk=blog_id)
     return render(request, 'edit.html',{'blog':blog_edit})
+
+def home(request):
+    comment=Comment.objects
+    return render(request, 'home.html',{'comment':comment})
 
 
 @csrf_exempt

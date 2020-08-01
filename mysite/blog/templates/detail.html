@@ -3,6 +3,17 @@
 <div class = "container">
     <h1>{{blog.title}}</h1>
     <p>{{blog.pub.date}}</p>
-    <p>{blog.body}}</p>
+    <p>{{blog.body}}</p>
+
+    <h4>댓글쓰기</h4>
+    {%for comment in blog.comments.all%}
+        <div class="comment">
+            <div class="date">{{comment.created_at}}</div>
+            <strong>{{comment.author_name}}</strong>
+            <p>{{comment.comment_text|linebreaks}}</p>
+        </div>
+        {%empty%}
+        <p>No comments here yet :(</p>
+        {%endfor%}
     <a href="{% url 'home' %}">돌아가기</a>
 </div>
