@@ -44,17 +44,21 @@ a {
     text-align: center;
 }
 
-#writebt {
-    width:80px;
+.write {
+    z-index: 1;
+    width:120px;
     height:40px;
-    position: relative;
-    bottom: 45%;
-    right: 50%;
-    border: 0px;
+    border: 10px;
     background: #fae7cb;
     outline: none;
     color: black; 
     text-align: center;
+    margin-left: 40px;
+    margin-top: 20px;
+    border-radius: 10px;
+    position:absolute;
+    right: 0;
+    top:150px;
 }
 
 .navname {
@@ -67,7 +71,7 @@ a {
     font-size: 42px;
     font-weight: bold;
     text-align: center; 
-    margin: 40px;
+    margin: 20px;
     padding: 30px;
     width: 400px;
     height: 120px;
@@ -77,7 +81,6 @@ a {
 
 .list-group {
     margin-left: 40px;
-    margin-left: 40px;
 }
 
 .chatlink {
@@ -86,7 +89,8 @@ a {
     background-color: #ffd31d;
     width: 180px;
     height: 280px;
-    right: 20px;   
+    right: 70px;   
+    bottom: 80px;
 }
 
 .sbjnamechat1{
@@ -100,6 +104,7 @@ a {
     margin-left: 10px;
     border-radius: 20px;
     padding-top: 15px;
+    font-weight: bold;
 }
 
 .sbjnamechat2{
@@ -114,6 +119,7 @@ a {
     margin-left: 10px;
     border-radius: 20px;
     padding-top: 8.5px;
+    font-weight: bold;
 }
 
 .namelink {
