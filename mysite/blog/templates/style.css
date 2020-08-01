@@ -1,0 +1,63 @@
+.menu > li {
+    display: inline-block;
+}
+
+.timetable{
+    font-family: 'Nanum Gothic', sans-serif;
+    font-size: 20px;
+    background-color: rgb(255,211,29);
+    width: 600px;
+    text-align: center;
+    margin-top: 50px;
+    margin-left: 100px;
+    padding: 10px;
+}
+.liveclass{
+    font-family: 'Nanum Gothic', sans-serif;
+    font-size: 20px;
+    background-color: rgb(255,211,29);
+    width: 600px;
+    text-align: center;
+    margin-left: 95px;
+    padding: 10px;
+}
+table{
+    border: 2px solid salmon;
+    margin-left: 100px;
+    margin-top: 10px;
+    margin-bottom: 100px;
+    font-family: 'Nanum Gothic', sans-serif;
+    font-size: 15px;
+    table-layout: fixed;
+    background-color:#fae7cb;
+}
+
+tr{
+    width : 20%;
+    height: 20%;
+}
+
+.day{
+    width: 20%;
+    height: 30px;
+}
+.livebox{
+    float: left;
+    border: 2px solid salmon;
+    width: 600px;
+    height: 600px;
+    margin-left: 100px;
+    margin-top: 10px;
+    margin-bottom: 100px;
+    background-color:#fae7cb;
+}
+.livebox > img{
+    margin-left: 50px;
+    margin-top: 20px;
+}
+.information{
+    font-family: 'Nanum Gothic', sans-serif;
+    font-size: 20px;
+    margin-top: 20px;
+    margin-left: 50px;
+}

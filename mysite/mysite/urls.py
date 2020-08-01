@@ -30,7 +30,6 @@ urlpatterns = [
     path('blog/edit/<int:blog_id>', blog.views.edit, name="edit"),
     path('blog/update/<int:blog_id>', blog.views.update, name="update"),
     path('home/', blog.views.home, name="home"),
-
     path('accounts/', include('accounts.urls')),
 
 ]
