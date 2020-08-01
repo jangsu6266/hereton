@@ -18,5 +18,7 @@
 
     <input type="button" onclick="location.href='{{blog.id}}/comment'" value="댓글 달기">
     <a href="{%url 'comment' blog.id%}">댓글 달기</a>
+    <!--그냥 댓글 달기 버튼을 두개 만들어봤는데, onclick이랑 href 태그로 한 것중
+    하나 골라서 써주세요!!-->
     <a href="{% url 'home' %}">돌아가기</a>
 </div>
