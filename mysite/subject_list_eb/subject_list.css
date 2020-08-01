@@ -1,0 +1,56 @@
+
+body {
+    font-family: 'Nanum Gothic', sans-serif;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+/* 아기 검색창 */
+
+.searching{
+    position: relative;
+    z-index: 8;
+    margin-top: 10px;
+    top: 20%
+    bottom: 10%;
+    left: 40%;
+    float: right;
+}
+
+#searchtext{
+    position: relative;
+    width: 400px;
+    height: 40px;
+    font-size: 12px;
+    outline: none;
+    text-align: center;
+}
+
+
+#searchbuttonmn {
+    position: relative;
+    width:80px;
+    height:40px;
+    border: 0px;
+    background: #ffd31d;
+    outline: none;
+    color: #ffffff; 
+    text-align: center;
+}
+
+#writebt {
+    width:80px;
+    height:40px;
+    position: relative;
+    bottom: 45%;
+    right: 50%;
+    border: 0px;
+    background: #ffd31d;
+    outline: none;
+    color: #ffffff; 
+    text-align: center;
+}
