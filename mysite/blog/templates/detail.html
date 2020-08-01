@@ -1,31 +1,37 @@
-<h1>detail</h1>
+{% extends 'base.html'%}
+{% block content %}
+{% load static %}
 
-<div class = "container">
-    <h1>{{blog.title}}</h1>
-    <p>{{blog.professor}} 교수님</p>
-    <p>{{blog.body}}</p>
+    <h1>detail</h1>
 
-    <div class="hashtag">
-        <h5>해시태그</h5>
-        {%for hashtag in hashtags%}
-        #{{hashtag.name}}
-        {%endfor%}
+    <div class = "container">
+        <h1>{{blog.title}}</h1>
+        <p>{{blog.professor}} 교수님</p>
+        <p>{{blog.body}}</p>
+
+        <div class="hashtag">
+            <h5>해시태그</h5>
+            {%for hashtag in hashtags%}
+            #{{hashtag.name}}
+            {%endfor%}
+        </div>
+
+        <h4>댓글쓰기</h4>
+        {%for comment in blog.comments.all%}
+            <div class="comment">
+                <div class="date">{{comment.created_at}}</div>
+                <strong>{{comment.author_name}}</strong>
+                <p>{{comment.comment_text|linebreaks}}</p>
+            </div>
+            {%empty%}
+            <p>No comments here yet :(</p>
+            {%endfor%}
+
+        <input type="button" onclick="location.href='{{blog.id}}/comment'" value="댓글 달기">
+        <a href="{%url 'comment' blog.id%}">댓글 달기</a>
+        <!--그냥 댓글 달기 버튼을 두개 만들어봤는데, onclick이랑 href 태그로 한 것중
+        하나 골라서 써주세요!!-->
+        <a href="{% url 'home' %}">돌아가기</a>
     </div>
 
-    <h4>댓글쓰기</h4>
-    {%for comment in blog.comments.all%}
-        <div class="comment">
-            <div class="date">{{comment.created_at}}</div>
-            <strong>{{comment.author_name}}</strong>
-            <p>{{comment.comment_text|linebreaks}}</p>
-        </div>
-        {%empty%}
-        <p>No comments here yet :(</p>
-        {%endfor%}
-
-    <input type="button" onclick="location.href='{{blog.id}}/comment'" value="댓글 달기">
-    <a href="{%url 'comment' blog.id%}">댓글 달기</a>
-    <!--그냥 댓글 달기 버튼을 두개 만들어봤는데, onclick이랑 href 태그로 한 것중
-    하나 골라서 써주세요!!-->
-    <a href="{% url 'home' %}">돌아가기</a>
-</div>
+{% endblock %}
