@@ -9,13 +9,15 @@ form {
     align-items: flex-end;
 }
 
+a { 
+    color: black;
+}
 /* 아기 검색창 */
 
 .searching{
     position: relative;
-    z-index: 8;
-    margin-top: 10px;
-    top: 20%
+    margin-top: 50px;
+    top: 20%;
     bottom: 10%;
     left: 40%;
     float: right;
@@ -36,9 +38,9 @@ form {
     width:80px;
     height:40px;
     border: 0px;
-    background: #ffd31d;
+    background: #fae7cb;
     outline: none;
-    color: #ffffff; 
+    color: black; 
     text-align: center;
 }
 
@@ -49,8 +51,85 @@ form {
     bottom: 45%;
     right: 50%;
     border: 0px;
-    background: #ffd31d;
+    background: #fae7cb;
     outline: none;
-    color: #ffffff; 
+    color: black; 
     text-align: center;
+}
+
+.navname {
+    color: #fae7cb;
+}
+
+.sbjname {
+    background-color: #ff7272;
+    color: white;
+    font-size: 42px;
+    font-weight: bold;
+    text-align: center; 
+    margin: 40px;
+    padding: 30px;
+    width: 400px;
+    height: 120px;
+    border-radius: 60px;
+
+}
+
+.list-group {
+    margin-left: 40px;
+    margin-left: 40px;
+}
+
+.chatlink {
+    z-index: 1;
+    position:fixed;
+    background-color: #ffd31d;
+    width: 180px;
+    height: 280px;
+    right: 20px;   
+}
+
+.sbjnamechat1{
+    color: black;
+    position: relative;
+    background-color: white;
+    font-weight: 60;
+    text-align: center; 
+    width: 160px;
+    height: 80px;
+    margin-left: 10px;
+    border-radius: 20px;
+    padding-top: 15px;
+}
+
+.sbjnamechat2{
+    color: black;
+    position: relative;
+    background-color: white;
+    font-weight: 60;
+    text-align: center; 
+    width: 160px;
+    height: 40px;
+    margin-top:20px;
+    margin-left: 10px;
+    border-radius: 20px;
+    padding-top: 8.5px;
+}
+
+.namelink {
+    text-align: center;
+    color: white;
+    font-size: 28px;
+    font-weight: bold;
+    text-align: center; 
+
+}
+
+.time {
+    margin-bottom: 0px;
+    text-align: center;
+}
+
+.sujfontchat {
+    font-size: 20px;
 }
