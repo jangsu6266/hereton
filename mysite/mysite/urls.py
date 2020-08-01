@@ -32,4 +32,5 @@ urlpatterns = [
     path('home/', blog.views.home, name="home"),
     path('accounts/', include('accounts.urls')),
 
+    path('blog/<int:blog_id>/comment', blog.views.add_comment_to_post, name='comment'),
 ]
