@@ -8,3 +8,6 @@ mysite/settings.py
 *.pot
 *.pyc
 __pycache__/
+
+mysite/__pycache__/
+mysite/db.sqlite3
